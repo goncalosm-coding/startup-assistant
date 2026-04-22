@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  startup-assistant:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./app/memory/chroma_store:/app/app/memory/chroma_store
