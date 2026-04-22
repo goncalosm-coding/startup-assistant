@@ -42,24 +42,3 @@ def retrieve_memory(query: str, k: int = 3) -> str:
         formatted.append(f"[{meta}]\n{r.page_content}")
 
     return "\n\n".join(formatted)
-
-
-# Quick test
-if __name__ == "__main__":
-
-    # Save some startup context
-    save_memory(
-        "RECRU is an AI-powered recruitment startup based in Portugal. "
-        "They are building a platform to match candidates using LLMs. "
-        "Main challenge: enterprise sales cycle is too long.",
-        metadata={"startup": "RECRU", "type": "checkpoint"}
-    )
-
-    save_memory(
-        "HeyJobs and Harver are the main competitors of RECRU in Europe.",
-        metadata={"startup": "RECRU", "type": "research"}
-    )
-
-    # Retrieve it
-    result = retrieve_memory("What do we know about RECRU?")
-    print(result)

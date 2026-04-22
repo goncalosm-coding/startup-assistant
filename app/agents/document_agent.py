@@ -34,22 +34,3 @@ chain = prompt | llm
 def run_document_agent(request: str) -> str:
     result = chain.invoke({"input": request})
     return result.content
-
-
-# Quick test
-if __name__ == "__main__":
-
-    test_input = """
-    Write a short competitor analysis report for a startup called RECRU, 
-    which does AI-powered recruitment in Europe.
-    
-    Use this research:
-    - HeyJobs (Germany): AI-driven recruitment platform, focuses on matching 
-      job seekers with opportunities
-    - Harver (Netherlands): AI-based hiring solutions, pre-employment assessments, 
-      data-driven candidate selection
-    - SonicJobs (UK): AI job matching platform, connects job seekers with listings
-    """
-
-    response = run_document_agent(test_input)
-    print(response)

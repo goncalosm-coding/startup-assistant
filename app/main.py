@@ -1,11 +1,10 @@
-from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage
+import uvicorn
 
-load_dotenv()
-
-llm = ChatOpenAI(model="gpt-4o", temperature=0)
-
-response = llm.invoke([HumanMessage(content="You are an assistant for startup founders. Say hello and introduce yourself in 2 sentences.")])
-
-print(response.content)
+if __name__ == "__main__":
+    uvicorn.run(
+        "app.api.main:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+        reload_dirs=["."]
+    )

@@ -38,12 +38,3 @@ def run_research_agent(question: str, chat_history: list = []) -> str:
         "chat_history": chat_history
     })
     return result["output"]
-
-
-# Quick test
-if __name__ == "__main__":
-    response = run_research_agent(
-        "Who are the top 3 Startups Incubators/Accelerators in Europe 2025"
-    )
-    print("\n--- FINAL RESPONSE ---")
-    print(response)

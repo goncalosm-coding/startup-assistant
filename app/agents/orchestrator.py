@@ -129,19 +129,3 @@ app = graph.compile()
 def run_orchestrator(user_input: str) -> str:
     result = app.invoke({"user_input": user_input})
     return result["agent_response"]
-
-
-# Quick test
-if __name__ == "__main__":
-    questions = [
-        "Who are the main competitors of an AI recruitment startup in Europe?",
-        "Write a short email to a founder named João summarising that their main challenge is enterprise sales cycles.",
-        "Remember that ProcessPlot is a startup doing process automation for factories in Portugal."
-    ]
-
-    for q in questions:
-        print(f"\n{'='*60}")
-        print(f"INPUT: {q}")
-        print(f"{'='*60}")
-        response = run_orchestrator(q)
-        print(f"\nRESPONSE:\n{response}")
