@@ -10,3 +10,4 @@ python-dotenv
 chromadb
 requests
 tavily-python
+streamlit
